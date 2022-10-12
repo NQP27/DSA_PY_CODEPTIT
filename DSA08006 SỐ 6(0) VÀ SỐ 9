@@ -1,0 +1,15 @@
+def divN(n):
+    dq = [9]
+    res = dq[-1]
+    while res % n != 0:
+        dq.append(res * 10)
+        dq.append(res * 10 + 9)
+        dq = dq[1::]
+        res = dq[0]
+    return res
+
+
+tc = int(input())
+for t in range(tc):
+    n = int(input())
+    print(divN(n))
