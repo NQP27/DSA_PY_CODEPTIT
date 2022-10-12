@@ -1,0 +1,15 @@
+n = int(input())
+q = []
+for i in range(n):
+    a = [x for x in input().split()]
+    if a[0] == "PUSH":
+        q.append(int(a[1]))
+    elif a[0] == "POP":
+        if len(q) != 0:
+            q = q[1::]
+    elif a[0] == "PRINTFRONT":
+        if len(q) > 0:
+            print(q[0])
+        else:
+            print("NONE")
+            # print(q)
