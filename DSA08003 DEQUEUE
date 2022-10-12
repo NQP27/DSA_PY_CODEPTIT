@@ -1,0 +1,24 @@
+n = int(input())
+dq = []
+for i in range(n):
+    a = [x for x in input().split()]
+    if a[0] == 'PUSHBACK':
+        dq.append(int(a[1]))
+    elif a[0] == 'PUSHFRONT':
+        dq = [int(a[1])] + dq
+    elif a[0] == 'PRINTFRONT':
+        if len(dq) > 0:
+            print(dq[0])
+        else:
+            print("NONE")
+    elif a[0] == 'PRINTBACK':
+        if len(dq) > 0:
+            print(dq[-1])
+        else:
+            print("NONE")
+    elif a[0] == 'POPFRONT':
+        if len(dq) > 0:
+            dq = dq[1::]
+    elif a[0] == 'POPBACK':
+        if len(dq) > 0:
+            dq = dq[:len(dq) - 1:]
